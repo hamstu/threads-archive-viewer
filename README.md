@@ -8,7 +8,7 @@ With Threads.com sunsetted on May 1, 2024 I've created a simple app to browse th
 
 *Please note this app was built fairly quickly and is quite scrappy / rough around the edges. USE AT YOUR OWN RISK!*
 
-This app is based on the Remix framework for React, and is designed to be deployed to Cloudflare. (I used their starter cloudflare template.) You could definitely deploy it elsewhere, but you'll have to adjust alot, like how env vars are handled in the app,  fix all the cloudflare specific remix imports, and so on.
+This app is based on the Remix framework for React, and is designed to be deployed to Cloudflare. (I used their starter cloudflare template.) You could definitely deploy it elsewhere, but you'll have to adjust a lot, like how env vars are handled in the app,  fix all the cloudflare specific remix imports, and so on.
 
 This app is also built around using MongoDB Atlas, including their Atlas Search feature to provide nice text search capabilities. But you could swap this for a similar document based storage engine. There are no write operations, only read.
 
@@ -18,13 +18,13 @@ First, you'll need the data export from the Threads instance. This will be a lar
 
 ```
 ├── data-export
-│   ├── channels.json
-│   ├── users.json
-│   ├── channels
-│   │   ├── 34445734900                     # channel id
-│   │   │   ├── 34445739006                 # thread id
-│   │   │   │   ├── thread.json             # thread data (content, comments, etc)
-│   │   │   │   ├── 34445739017_giphy.gif   # thread attachment(s), prefixed with attachment's uploadID (this is in the thread.json)
+│   ├── channels.json
+│   ├── users.json
+│   ├── channels
+│   │   ├── 34445734900                     # channel id
+│   │   │   ├── 34445739006                 # thread id
+│   │   │   │   ├── thread.json             # thread data (content, comments, etc)
+│   │   │   │   ├── 34445739017_giphy.gif   # thread attachment(s), prefixed with attachment's uploadID (this is in the thread.json)
 ```
 
 With this data you should:
@@ -197,7 +197,7 @@ Since users are fixed and generally small in number, I also hardcoded them in th
 
 #### Channels
 
-I wasn't perfectly consisistent and also use hardcoded channels sometimes (😅), so make sure to update [channels.ts](/app/services/channels.ts) with your channels data, the same as what you put in the `channels` collection in your database.
+I wasn't perfectly consistent and also use hardcoded channels sometimes (😅), so make sure to update [channels.ts](/app/services/channels.ts) with your channels data, the same as what you put in the `channels` collection in your database.
 
 Ideally this would be removed to use one approach or the other, not both. So let that be an excercise for the reader, if they so choose.
 
