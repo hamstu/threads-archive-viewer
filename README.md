@@ -219,6 +219,8 @@ npm run build
 npm run deploy
 ```
 
+⚠️ **Important:** You will need to configure the same env vars you have in `.dev.vars` locally on the Cloudflare dashboard UI. (Things like the Google Callback URL will also need to be different to match your production deployment URL.) Look up the Cloudflare's docs for details on this: https://developers.cloudflare.com/workers/configuration/environment-variables/#add-environment-variables-via-the-dashboard
+
 ## Troubleshooting
 
 * Make sure you have all the data the app needs (env vars, data in the CDN, custom emojis, etc.)
