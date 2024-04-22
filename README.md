@@ -129,7 +129,7 @@ You also need to upload to a `channels` collection in your DB. This doesn't need
 
 ### Uploading media
 
-This is also best done programmaticly, or with a CLI tool. I used (`rclone`)[https://rclone.org/].
+This is also best done programmaticly, or with a CLI tool. I used [`rclone`](https://rclone.org/).
 
 * First create a new bucket in your storage provider. I created one called `threads-archive` in S3.
 * Now, follow the `rclone` instructions to setup a new endpoint, I called mine `buffer-s3`.
@@ -155,7 +155,7 @@ There's also some local data that is hard coded, which you will need to update:
 
 Since custom emojis were not part of the Threads export I had to cobble them together by scraping our Threads instance (which got me some, but not all) and getting the rest from our Slack instance. You can google to see how to programmatically exract custom emojis from Slack.
 
-Once you have the custom emojis, you'll need to upload them to the `/custom-emojis/` path in whatever CDN you're using. Then update the object(s) in (replace-custom-emojis.ts)[/app/utils/replace-custom-emojis.ts]. I was able to extract a liust of the custom emojis we were using in our thread with a bash script like this: (requires you to have `jq` installed).
+Once you have the custom emojis, you'll need to upload them to the `/custom-emojis/` path in whatever CDN you're using. Then update the object(s) in [replace-custom-emojis.ts](/app/utils/replace-custom-emojis.ts). I was able to extract a liust of the custom emojis we were using in our thread with a bash script like this: (requires you to have `jq` installed).
 
 ```bash
 #!/bin/bash
@@ -191,11 +191,11 @@ If you are missing custom emojis, the app will just render them as plain text.
 
 #### Users
 
-Since users are fixed and generally small in number, I also hardcoded them in the (users.ts)[/app/services/users.ts] file. You can put what you get from the data export into that file. I was able to scrape avatars from Threads, so you can do that, or get them another way (i.e., from your Slack or some other tool.) Avatars aren't required for the app to run.
+Since users are fixed and generally small in number, I also hardcoded them in the [users.ts](/app/services/users.ts) file. You can put what you get from the data export into that file. I was able to scrape avatars from Threads, so you can do that, or get them another way (i.e., from your Slack or some other tool.) Avatars aren't required for the app to run.
 
 #### Channels
 
-I wasn't perfectly consisistent and also use hardcoded channels sometimes (😅), so make sure to update (channels.ts)[/app/services/channels.ts] with your channels data, the same as what you put in the `channels` collection in your database.
+I wasn't perfectly consisistent and also use hardcoded channels sometimes (😅), so make sure to update [channels.ts](/app/services/channels.ts) with your channels data, the same as what you put in the `channels` collection in your database.
 
 Ideally this would be removed to use one approach or the other, not both. So let that be an excercise for the reader, if they so choose.
 
