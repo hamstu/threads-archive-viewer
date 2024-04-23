@@ -1,6 +1,6 @@
 # Threads Archive Viewer
 
-With Threads.com sunsetted on May 1, 2024 I've created a simple app to browse the archive of posts.
+With Buffer ending our usage of Threads, I've created a simple app to browse our exported archive of posts.
 
 <img width="1840" alt="CleanShot 2024-04-22 at 16 45 09@2x" src="https://github.com/hamstu/threads-archive-viewer/assets/809093/05d5317f-fabd-46e9-b879-a752952a49fa">
 
